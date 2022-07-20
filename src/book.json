@@ -1,0 +1,87 @@
+{
+  "books": [
+    {
+      "BookName": "In Search of Lost Time",
+      "Author": " Marcel Proust",
+      "Quantity": 12,
+      "Category": "Kids",
+      "id": 17
+    },
+    {
+      "BookName": "To The Lighthouse ",
+      "Author": "Virginia Woolf",
+      "Quantity": 55,
+      "Category": "Novels",
+      "id": 19
+    },
+    {
+      "BookName": "Middlemarch",
+      "Author": "George Eliot",
+      "Quantity": 10,
+      "Category": "Novels",
+      "id": 20
+    },
+    {
+      "BookName": "DisneyWorld",
+      "Author": "DisneyCompany",
+      "Quantity": 45,
+      "Category": "Kids",
+      "id": 21
+    },
+    {
+      "BookName": "Emma",
+      "Author": " Jane Austen",
+      "Quantity": 78,
+      "Category": "Political",
+      "id": 22
+    }
+  ],
+  "requestlist": [
+    {
+      "BookName": "Middlemarch",
+      "Author": "George Eliot",
+      "Quantity": 10,
+      "Category": "Novels",
+      "id": 71
+    },
+    {
+      "BookName": "DisneyWorld",
+      "Author": "DisneyCompany",
+      "Quantity": 45,
+      "Category": "Kids",
+      "id": 72
+    }
+  ],
+  "issuedBooks": [
+    
+    {
+      "BookName": "Middlemarch",
+      "Author": "George Eliot",
+      "Quantity": 10,
+      "Category": "Novels",
+      "id": 71
+    }
+  ],
+  "registered": [
+    {
+      "Firstname": "Saurabh",
+      "Lastname": "Langote",
+      "Email": "saurabh.langote@euromonitor.com",
+      "Role": "user",
+      "Gender": "Male",
+      "City": "Bangalore",
+      "Mobile": "8087573257",
+      "id": 8
+    },
+    {
+      "Firstname": "Rushi",
+      "Lastname": "Yadav",
+      "Email": "rushi@gmail.com",
+      "Role": "admin",
+      "Gender": "Male",
+      "City": "Bangalore",
+      "Mobile": "8080808757",
+      "id": 9
+    }
+  ]
+}

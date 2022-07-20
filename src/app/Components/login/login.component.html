@@ -1,0 +1,34 @@
+<mat-card class="example-card">
+  <div class="close_btn">
+    <button mat-icon-button mat-dialog-close>
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <mat-card-header style="margin-left: 90px;">
+    <mat-card-title>Login</mat-card-title>
+  </mat-card-header>
+  <form class="form" #form="ngForm" (ngSubmit)="onSubmit(form)">
+    <mat-card-content class="field">
+      <table class="example-full-width" cellspacing="0">
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Username" [(ngModel)]="Firstname" name="Firstname" required>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Password" [(ngModel)]="Lastname" type="password" name="Lastname" required>
+            </mat-form-field>
+          </td>
+        </tr>
+      </table>
+    </mat-card-content>
+    <mat-card-actions class="button">
+      <button mat-raised-button color="primary" type="submit">Login</button>&nbsp;
+      <a (click)="register()" mat-dialog-close>New User ?</a>
+    </mat-card-actions>
+  </form>
+</mat-card>

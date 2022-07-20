@@ -1,0 +1,29 @@
+<nav>
+    <div>
+        <mat-toolbar color="primary" class="navbar">
+            <div class="mat-display4">
+                <!--this part is for lib name -->
+                <a class="nav-link" routerLink="/home" mat-button><span>𝐵𝑜𝑜𝓀𝒩𝒶𝓉𝒾𝑜𝓃 &nbsp;</span>
+                    <mat-icon>auto_stories</mat-icon>
+                </a>
+            </div>
+            <div class="navbar">
+                <a class="nav-link" routerLink="/home" mat-button>
+                    <mat-icon aria-hidden="false">home</mat-icon>Home
+                </a>
+                <!-- <a  class="nav-link"  mat-button><mat-icon aria-hidden="false" >book</mat-icon>Books</a> -->
+                <a class="nav-link" (click)="openLogin()" mat-button>
+                    <mat-icon aria-hidden="false">login</mat-icon>Login
+                </a>
+                <a class="nav-link" (click)="openRegister()" mat-button>
+                    <mat-icon aria-hidden="false">person</mat-icon>Register
+                </a>
+                <a class="nav-link" routerLink="/aboutus" mat-button>
+                    <mat-icon aria-hidden="false">account_circle</mat-icon>About
+                </a>
+            </div>
+        </mat-toolbar>
+    </div>
+</nav>
+
+<router-outlet></router-outlet>

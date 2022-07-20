@@ -1,0 +1,30 @@
+.navbar{
+    justify-content: space-between;
+   
+}
+
+a{
+ padding-right: 1rem;
+ text-decoration: none;
+ color:whitesmoke;
+}
+
+a:hover{
+    color:black;
+    background-color: white;
+}
+
+.data{
+ text-align: center;
+ margin-top: 15%;
+ color: whitesmoke
+}
+span
+{
+  font-size:200%;  
+}
+.dialog-title {
+    display: flex;
+    justify-content: space-between;
+   
+  }

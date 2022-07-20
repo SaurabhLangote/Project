@@ -1,0 +1,37 @@
+.example-full-width {
+  width: 100%;
+}
+
+.loginForm {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.close_btn {
+  display: flex;
+  justify-content: right;
+  align-items: flex-end;
+  text-align: right;
+}
+.button{
+
+  margin-left: 60px;
+}
+
+.a {
+
+  text-align: center;
+  color: blue;
+}
+
+.toast-container {
+
+  position: absolute;
+  top: 0px;
+  left: 90%;
+}
+.form{
+
+  width: 250px;
+}

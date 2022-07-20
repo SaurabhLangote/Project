@@ -1,0 +1,85 @@
+h1
+{
+    text-align: center;
+    color: white;
+}
+
+.containerbox{
+    width: 100%;
+    /* background-image: linear-gradient(to right, rgb(238, 231, 231),rgb(244, 241, 241)); */
+    height: 90%;
+}
+
+.card1{  
+  
+    margin: 10px;
+    width:200px ;
+    height: 200px;
+    background-color:azure;
+   
+}
+.card1:hover{
+    color:orange;
+}
+.card2{  
+   
+    margin: 10px;
+    width:200px ;
+    height: 200px;
+   background-color:azure;
+}
+.card2:hover{
+    color:orange;
+}
+.card3{  
+   
+    margin: 10px;
+    width:200px ;
+    height: 200px;
+   background-color:azure;
+}
+.card3:hover{
+    color: orange;
+}
+.card4{  
+   
+    margin: 10px;
+    width:200px ;
+    height: 200px;
+   background-color:azure;
+}
+.card4:hover{
+    color: orange;
+}
+.card5{  
+    
+    margin: 10px;
+    width:200px ;
+    height: 200px;
+    background-color:azure;
+}
+.card5:hover{
+    color: orange;
+}
+
+.sec1{
+    display: -webkit-flex; /* Safari */
+    display: flex;
+    padding: 10px;
+    justify-content: space-around;
+}
+
+.sec2{
+    display: -webkit-flex; /* Safari */
+    display: flex;
+    margin-top: 30px;
+    justify-content: center;
+}
+P{
+    color: black;
+    font-size:larger;
+}
+
+.footer{
+    margin-top: 30px;
+}
