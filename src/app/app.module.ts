@@ -23,6 +23,7 @@ import { FooterComponent } from './Components/footer/footer.component';
 import { LogoutComponent } from './shared/logout/logout.component';
 import { RegUsersComponent } from './Components/admin/reg-users/reg-users.component';
 import { IssuedBooksComponent } from './Components/admin/issued-books/issued-books.component';
+import { UserDetailsComponent } from './Components/user/user-details/user-details.component';
 
 
 
@@ -47,6 +48,7 @@ import { IssuedBooksComponent } from './Components/admin/issued-books/issued-boo
     LogoutComponent,
     RegUsersComponent,
     IssuedBooksComponent,
+    UserDetailsComponent,
     
     
  

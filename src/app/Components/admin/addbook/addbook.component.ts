@@ -47,7 +47,7 @@ export class AddbookComponent implements OnInit {
     if (!this.editBook) {
       if (this.bookForm.valid) {
 
-        this.api.postBook(this.bookForm.value).subscribe({
+        this.api.addBook(this.bookForm.value).subscribe({
             next: (Response) => {
               // alert("Book Added Successfully !!")
               this.toastr.success('', 'Book Added Successfully',{
@@ -55,7 +55,7 @@ export class AddbookComponent implements OnInit {
               });
               this.bookForm.reset();
               this.dialogref.close('save');
-              window.location.reload();       // to refresh page automatically
+              this.getAllbooks();
             },
             error: () => {
               alert("Error While Adding ");
@@ -67,7 +67,7 @@ export class AddbookComponent implements OnInit {
     }
   }
   updateBook() {
-    this.api.putProduct(this.bookForm.value, this.editBook.id)
+    this.api.updateBook(this.bookForm.value, this.editBook.id)
       .subscribe({
         next: (res) => {
            this.toastr.success('', 'Book Updated Successfully',{
@@ -79,5 +79,11 @@ export class AddbookComponent implements OnInit {
       })
   }
 
-
+  getAllbooks() {
+    this.api.getmyBook()
+      .subscribe({
+        next: (_res) => {
+        }
+      })
+  }
 }

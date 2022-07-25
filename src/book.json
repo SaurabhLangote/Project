@@ -1,13 +1,6 @@
 {
   "books": [
     {
-      "BookName": "In Search of Lost Time",
-      "Author": " Marcel Proust",
-      "Quantity": 12,
-      "Category": "Kids",
-      "id": 17
-    },
-    {
       "BookName": "To The Lighthouse ",
       "Author": "Virginia Woolf",
       "Quantity": 55,
@@ -34,6 +27,13 @@
       "Quantity": 78,
       "Category": "Political",
       "id": 22
+    },
+    {
+      "BookName": "book3",
+      "Author": "a3",
+      "Quantity": 3,
+      "Category": "Novels",
+      "id": 23
     }
   ],
   "requestlist": [
@@ -50,10 +50,16 @@
       "Quantity": 45,
       "Category": "Kids",
       "id": 72
+    },
+    {
+      "BookName": "Middlemarch",
+      "Author": "George Eliot",
+      "Quantity": 10,
+      "Category": "Novels",
+      "id": 73
     }
   ],
   "issuedBooks": [
-    
     {
       "BookName": "Middlemarch",
       "Author": "George Eliot",
@@ -82,6 +88,16 @@
       "City": "Bangalore",
       "Mobile": "8080808757",
       "id": 9
+    },
+    {
+      "Firstname": "Sam",
+      "Lastname": "Taylor",
+      "Email": "Sam@gmail.com",
+      "Role": "user",
+      "Gender": "Male",
+      "City": "Tokyo",
+      "Mobile": "2045747878",
+      "id": 10
     }
   ]
 }

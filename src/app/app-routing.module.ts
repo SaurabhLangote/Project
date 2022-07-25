@@ -13,6 +13,7 @@ import { NotificationComponent } from './Components/admin/notification/notificat
 import { AuthguardGuard } from './authguard.guard';
 import { RegUsersComponent } from './Components/admin/reg-users/reg-users.component';
 import { IssuedBooksComponent } from './Components/admin/issued-books/issued-books.component';
+import { UserDetailsComponent } from './Components/user/user-details/user-details.component';
 
 const routes: Routes = [
   {path:'' ,component:HomeComponent},
@@ -28,7 +29,8 @@ const routes: Routes = [
   {path:'register',component:RegisterComponent,canActivate:[AuthguardGuard]},
   {path:'notification',component:NotificationComponent,canActivate:[AuthguardGuard]},
   {path:'regusers',component:RegUsersComponent,canActivate:[AuthguardGuard]},
-  {path:'issuedBooks',component:IssuedBooksComponent}
+  {path:'issuedBooks',component:IssuedBooksComponent},
+  {path:'UserDetails',component:UserDetailsComponent}
  ];
 
 @NgModule({

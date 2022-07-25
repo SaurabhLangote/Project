@@ -1,6 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
+import { environment } from 'src/environments/environment';
+const bookUrl = environment.bookUrl;
+const requestUrl = environment.requestUrl;
+const userRegister = environment.userUrl;
 @Injectable({
   providedIn: 'root'
 })
@@ -8,40 +11,39 @@ export class BookServiceService {
 
   constructor(private http: HttpClient) { }
 
-  postBook(data: any) {               //to add book     
+  addBook(data: any) {
 
-    return this.http.post<any>("http://localhost:3000/books/", data);
+    return this.http.post<any>(bookUrl, data);
   }
 
-  getmyBook()                      //get all book                                                    
-  {
-    return this.http.get<any>("http://localhost:3000/books/");
+  getmyBook() {
+    return this.http.get<any>(bookUrl);
   }
 
-  putProduct(data: any, id: number)   // to update existing book
+  updateBook(data: any, id: number)   // to update existing book
   {
-    return this.http.patch<any>("http://localhost:3000/books/" + id, data);
+    return this.http.patch<any>(bookUrl + id, data);
   }
 
   deleteBook(id: number) {
-    return this.http.delete<any>("http://localhost:3000/books/" + id)
+    return this.http.delete<any>(bookUrl + id)
   }
 
   deleteReqBook(id: number) {
-    return this.http.delete<any>("http://localhost:3000/requestlist/" + id)
+    return this.http.delete<any>(requestUrl + id)
   }
 
   getBooks() {
-    return this.http.get('http://localhost:3000/books')
-  
+    return this.http.get(bookUrl)
   }
+
   getBookById(id: any) {
-    return this.http.get("http://localhost:3000/books/" + id)
+    return this.http.get(bookUrl + id)
   }
 
   getRequest() {
 
-    return this.http.get<any>("http://localhost:3000/requestlist")
+    return this.http.get<any>(requestUrl)
   }
 
   issuedBook(data: any) {
@@ -49,19 +51,17 @@ export class BookServiceService {
   }
 
 
+  registerUser(data: any) {
 
-  //for registration 
-  registerUser(data: any) {                // to register user/admin
-
-    return this.http.post<any>("http://localhost:3000/registered", data)
+    return this.http.post<any>(userRegister, data)
   }
 
-   getRegistration(data:any){              // To get registered User
-    return this.http.get<any>("http://localhost:3000/registered",data)
+  getRegistration(data: any) {
+    return this.http.get<any>(userRegister, data)
   }
 
-  deleteReg(id:number){
-   return this.http.delete<any>("http://localhost:3000/registered/"+id)  
+  deleteReg(id: number) {
+    return this.http.delete<any>(userRegister + id)
   }
 
 }
