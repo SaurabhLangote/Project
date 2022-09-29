@@ -2,16 +2,22 @@
 
     <span>Welcome User..</span>
     <span class="example-spacer"></span>
-     
     
-
     <button mat-icon-button style="margin-right: 20px;" (click)="UserDetails()">
-        <mat-icon>people</mat-icon>
+        <mat-icon>account_circle</mat-icon>
+        
+    </button>
+    
+    <button mat-icon-button style="margin-right: 20px;">
+        <mat-icon>shopping_cart</mat-icon>
+    </button>
+
+    <button mat-icon-button style="margin-right: 20px;">
+        <mat-icon>notifications</mat-icon>
     </button>
 
     <button mat-icon-button style="margin-right: 20px;" (click)="logout()">
         <mat-icon>logout</mat-icon>
     </button>
-
 </mat-toolbar>
 <router-outlet></router-outlet>

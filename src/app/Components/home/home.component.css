@@ -1,24 +1,23 @@
 .example-spacer {
-    flex: 1 1 auto;
-  }
+  flex: 1 1 auto;
+}
 
-  .Name
-  {
-    margin-left: 70%;
-    margin-top: 14%;
-    font-weight: 900;
-    font-size: x-large;
-    
-  }
-  p
-  {
-    margin-left: 60%;
-    margin-right: 20px;
-  }
-  .A
-  {
-      background-image: url("/assets/book9.jpg");
-      background-repeat: no-repeat;
-      width:100%;
-      height: 100%;
-  }
+.Name {
+  margin-left: 70%;
+  margin-top: 14%;
+  font-weight: 900;
+  font-size: x-large;
+
+}
+
+p {
+  margin-left: 60%;
+  margin-right: 20px;
+}
+
+.A {
+  background-image: url("/assets/book9.jpg");
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}

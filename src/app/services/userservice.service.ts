@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 const requestUrl = environment.requestUrl;
+const issuedBook = environment.issuedBooks;
+const userUrl=environment.userUrl;
 
 @Injectable({
   providedIn: 'root'
@@ -17,8 +19,12 @@ export class UserserviceService {
 
   getIssuedBook(){
 
-    return this.http.get<any>(" http://localhost:3000/issuedBooks")
+    return this.http.get<any>(issuedBook)
 
+  }
+
+  getReguser(data:any){
+    return this.http.get<any>(userUrl,data)
   }
 
  

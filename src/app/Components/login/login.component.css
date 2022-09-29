@@ -14,7 +14,8 @@
   align-items: flex-end;
   text-align: right;
 }
-.button{
+
+.button {
 
   margin-left: 60px;
 }
@@ -31,7 +32,8 @@
   top: 0px;
   left: 90%;
 }
-.form{
+
+.form {
 
   width: 250px;
 }

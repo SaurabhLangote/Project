@@ -24,6 +24,9 @@ import { LogoutComponent } from './shared/logout/logout.component';
 import { RegUsersComponent } from './Components/admin/reg-users/reg-users.component';
 import { IssuedBooksComponent } from './Components/admin/issued-books/issued-books.component';
 import { UserDetailsComponent } from './Components/user/user-details/user-details.component';
+import { AgGridComponent } from './Components/ag-grid/ag-grid.component';
+import { AgGridModule } from 'ag-grid-angular';
+
 
 
 
@@ -49,6 +52,7 @@ import { UserDetailsComponent } from './Components/user/user-details/user-detail
     RegUsersComponent,
     IssuedBooksComponent,
     UserDetailsComponent,
+    AgGridComponent,
     
     
  
@@ -59,7 +63,8 @@ import { UserDetailsComponent } from './Components/user/user-details/user-detail
     BrowserAnimationsModule,
     BookmoduleModule,
     ToastrModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
+    AgGridModule
   
   ],
   providers: [],

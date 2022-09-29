@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment';
 const bookUrl = environment.bookUrl;
 const requestUrl = environment.requestUrl;
 const userRegister = environment.userUrl;
+const issuedBook = environment.issuedBooks;
 @Injectable({
   providedIn: 'root'
 })
@@ -20,7 +21,7 @@ export class BookServiceService {
     return this.http.get<any>(bookUrl);
   }
 
-  updateBook(data: any, id: number)   // to update existing book
+  updateBook(data: any, id: number)   
   {
     return this.http.patch<any>(bookUrl + id, data);
   }
@@ -47,7 +48,7 @@ export class BookServiceService {
   }
 
   issuedBook(data: any) {
-    return this.http.post<any>(" http://localhost:3000/issuedBooks", data)
+    return this.http.post<any>(issuedBook, data)
   }
 
 

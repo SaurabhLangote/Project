@@ -1,26 +1,27 @@
-.main
-{
-    margin-left: 37%; 
+.main {
+    margin-left: 37%;
     margin-top: 10px;
-    width: 400px; 
+    width: 400px;
 }
 
-.container
-{
+.container {
     max-width: 1000px;
-    margin: 0 auto;      /*-To Make table at center-*/
+    margin: 0 auto;
 }
-
 
 table {
     width: 100%;
- }
-  
-  
-  .mat-form-field {
+}
+
+.mat-form-field {
     font-size: 14px;
     width: 100%;
-  }
- 
+}
 
- 
+h1{
+
+    text-align: center;
+
+    margin-top: 50px;
+
+  }

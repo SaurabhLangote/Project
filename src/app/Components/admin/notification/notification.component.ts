@@ -27,7 +27,7 @@ export class NotificationComponent implements OnInit {
     private api: BookServiceService,
     private formbuilder: FormBuilder,
     private toastr: ToastrService,
-    
+
   ) { }
 
   ngOnInit(): void {
@@ -41,7 +41,7 @@ export class NotificationComponent implements OnInit {
 
     })
 
-       this.getAllRequests();
+    this.getAllRequests();
   }
 
   applyFilter(event: Event) {
@@ -52,11 +52,8 @@ export class NotificationComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
-
-  
   getAllRequests() {
     this.api.getRequest()
-
       .subscribe({
         next: (res: any) => {
           this.dataSource = new MatTableDataSource(res);
@@ -66,39 +63,34 @@ export class NotificationComponent implements OnInit {
         },
         error: (err) => {
           this.toastr.error('', 'Error While Fetching The Data', {
-             positionClass: 'toast-top-center'
+            positionClass: 'toast-top-center'
           });
         }
       })
-
   }
 
-  acceptReq(data:any){
-    console.log(data,'ddfgdfgdfg')
+  acceptReq(data: any) {
+    console.log(data)
     this.api.issuedBook(data).subscribe({
-      next:(res)=>{
-        
+      next: (res) => {
 
       }
     })
     this.toastr.success('', 'Request Accepted Successfully', {
-       positionClass: 'toast-top-center'
+      positionClass: 'toast-top-center'
     });
   }
 
-  rejectReq(id:any){
-     this.api.deleteReqBook(id).subscribe({
-      next:(res)=>{
-        }
-      
-     })
-     
+  rejectReq(id: any) {
+    this.api.deleteReqBook(id).subscribe({
+      next: (res) => {
+      }
+    })
     this.toastr.error('', 'You Rejected Request', {
       positionClass: 'toast-top-center'
-   });
+    });
 
-   this.api.getRequest();
-  
+    this.api.getRequest();
   }
 
 }

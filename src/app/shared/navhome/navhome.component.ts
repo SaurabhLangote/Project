@@ -14,9 +14,7 @@ export class NavhomeComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
   openLogin() {
-
     this.dialog.open(LoginComponent);
   }
   openRegister() {

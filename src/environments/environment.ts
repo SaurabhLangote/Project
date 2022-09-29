@@ -6,7 +6,8 @@ export const environment = {
   production: false,
   bookUrl:"http://localhost:3000/books/",
   requestUrl:"http://localhost:3000/requestlist/",
-  userUrl:"http://localhost:3000/registered/"
+  userUrl:"http://localhost:3000/registered/",
+  issuedBooks:" http://localhost:3000/issuedBooks"
 }
 /*
  * For easier debugging in development mode, you can import the following file

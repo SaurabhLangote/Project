@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { ColDef } from 'ag-grid-community';
 import { ToastrService } from 'ngx-toastr';
 import { AddbookComponent } from 'src/app/Components/admin/addbook/addbook.component';
 import { BookServiceService } from 'src/app/services/book-service.service';
@@ -14,8 +15,24 @@ import { BookServiceService } from 'src/app/services/book-service.service';
   styleUrls: ['./booklist.component.css']
 })
 export class BooklistComponent implements OnInit {
+
+  defaultColDef:ColDef={sortable:true, filter:true}
+
+  colDefs = [
+  
+    {headerName: 'Id', field: 'id', sortable: true, filter: true},
+    {headerName: 'Book Name', field: 'BookName', sortable: true, filter: true},
+    {headerName: 'Category', field: 'Category', sortable: true, filter: true},
+    {headerName: 'Author Name', field: 'Author', sortable: true, filter: true},
+    {headerName: 'Quantity', field: 'Quantity', sortable: true, filter: true}
+];
+
+rowData: any;
+data:any;
+
+  
   bookData: any;
-  displayedColumns: string[] = ['BookName', 'Author', 'Quantity', 'Category', 'Edit'];
+  displayedColumns: string[] = ['id','BookName', 'Author', 'Quantity', 'Category'];
   dataSource !: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator !: MatPaginator;
@@ -28,7 +45,6 @@ export class BooklistComponent implements OnInit {
 
     this.getAllbooks();
   }
-
   addBook() {
     this.dialog.open(AddbookComponent)
       .afterClosed()
@@ -39,7 +55,6 @@ export class BooklistComponent implements OnInit {
         }
       })
   }
-
   getAllbooks() {
     this.api.getmyBook()
       .subscribe({
@@ -47,6 +62,7 @@ export class BooklistComponent implements OnInit {
           this.dataSource = new MatTableDataSource(res);
           this.dataSource.paginator = this.paginator;
           this.dataSource.sort = this.sort;
+          this.data=res;
         }
       })
   }
@@ -58,7 +74,6 @@ export class BooklistComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
-
   editData(row: any) {
     this.dialog.open(AddbookComponent, {
       data: row
@@ -67,9 +82,7 @@ export class BooklistComponent implements OnInit {
         this.getAllbooks();
       }
     })
-
   }
-
   deleteBook(id: number) {
     this.api.deleteBook(id)
       .subscribe({
@@ -79,7 +92,6 @@ export class BooklistComponent implements OnInit {
           });
           this.getAllbooks();
         }
-
       })
   }
 

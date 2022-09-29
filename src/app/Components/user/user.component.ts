@@ -30,7 +30,7 @@ export class UserComponent implements OnInit {
     private formbuilder: FormBuilder,
     private toastr: ToastrService,
     private requestapi: UserserviceService,
-    
+
   ) { }
 
   ngOnInit(): void {
@@ -39,13 +39,11 @@ export class UserComponent implements OnInit {
       Author: ['', Validators.required],
       Quantity: ['', Validators.required],
       Category: ['', Validators.required],
-     })
+    })
 
     this.api.getBooks().subscribe(Response => {
-
       this.bookData = Response;
       this.getAllbooks();
-
     });
   }
 
@@ -70,8 +68,7 @@ export class UserComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
-
-  /*-request-*/
+  
   sendRequest(no: any) {
     if (no > 2) {
       this.toastr.error('', '3 Request only', {
@@ -79,37 +76,26 @@ export class UserComponent implements OnInit {
       });
     }
     else {
-
       if (this.requestForm.valid) {
-
         this.requestapi.requestBook(this.requestForm.value)
           .subscribe({
             next: (res) => {
-              // this.changetext();
               this.toastr.success('', 'Request Sent !!', {
                 positionClass: 'toast-top-center'
               });
-             }
-          })  
-        }
+            }
+          })
       }
+    }
   }
   requestBook(data: any) {
-    // this.requestForm.controls['id'].setValue(data.id);
+
     this.requestForm.controls['BookName'].setValue(data.BookName);
     this.requestForm.controls['Author'].setValue(data.Author);
     this.requestForm.controls['Quantity'].setValue(data.Quantity);
     this.requestForm.controls['Category'].setValue(data.Category);
 
-    // this.btnVal = "Requested"
-
-
     this.sendRequest(this.count);
     this.count++;
-
-
   }
-
-
-
 }

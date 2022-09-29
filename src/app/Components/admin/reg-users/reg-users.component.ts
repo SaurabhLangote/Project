@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { ColDef } from 'ag-grid-community';
 import { ToastrService } from 'ngx-toastr';
 import { BookServiceService } from 'src/app/services/book-service.service';
 
@@ -11,9 +12,26 @@ import { BookServiceService } from 'src/app/services/book-service.service';
   styleUrls: ['./reg-users.component.css']
 })
 export class RegUsersComponent implements OnInit {
-  data: any
 
-  displayedColumns: string[] = ['Firstname', 'Lastname', 'Email','Role','Gender', 'City','Mobile','Edit'];
+  defaultColDef:ColDef={sortable:true, filter:true}
+
+    colDefs = [
+      {headerName: 'ID', field: 'id', sortable: true, filter: true},
+      {headerName: 'Firstname', field: 'Firstname', sortable: true, filter: true},
+      {headerName: 'Lastname', field: 'Lastname', sortable: true, filter: true},
+      {headerName: 'Email', field: 'Email', sortable: true, filter: true},
+      {headerName: 'Role', field: 'Role', sortable: true, filter: true},
+      {headerName: 'Gender', field: 'Gender', sortable: true, filter: true},
+      {headerName: 'City', field: 'City', sortable: true, filter: true},
+      {headerName: 'Mobile', field: 'Mobile', sortable: true, filter: true}
+     
+  ];
+  
+  rowData: any;
+  data:any;
+  
+
+  displayedColumns: string[] = ['id','Firstname', 'Lastname', 'Email', 'Role', 'Gender', 'City', 'Mobile'];
   dataSource !: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator !: MatPaginator;
@@ -36,17 +54,18 @@ export class RegUsersComponent implements OnInit {
 
   getRegistration(data: any) {
     this.api.getRegistration(data).subscribe({
-      next: (res:any) => {
+      next: (res: any) => {
         this.dataSource = new MatTableDataSource(res);
         this.dataSource.paginator = this.paginator;
-        this.dataSource.sort = this.sort;      
+        this.dataSource.sort = this.sort;
+        this.data=res;
       }
     })
   }
 
-  deleteReg(id:number){
+  deleteReg(id: number) {
     this.api.deleteReg(id).subscribe({
-      next:(res)=>{
+      next: (res) => {
         console.log(res)
         this.toastr.success('', 'User Deleted Successfully', {
           positionClass: 'toast-top-center'

@@ -33,21 +33,15 @@ export class NavadminComponent implements OnInit {
   }
   openNotification() {
     this.dialog.open(NotificationComponent)
-
   }
-
   logout() {
-    
     this.dialog.open(LogoutComponent)
-   
   }
   openInfo() {
     this.dialog.open(ProfileComponent)
   }
-
   getAllRequests() {
     this.api.getRequest()
-
       .subscribe({
         next: (res: any) => {
           this.requestDatalength = res.length
@@ -58,6 +52,5 @@ export class NavadminComponent implements OnInit {
           this.no = res.length;
         }
       })
-
   }
 }

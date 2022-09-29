@@ -14,20 +14,20 @@ export class AddbookComponent implements OnInit {
   constructor(
     private formbuilder: FormBuilder,
     private api: BookServiceService,
-    private toastr:ToastrService,
+    private toastr: ToastrService,
     @Inject(MAT_DIALOG_DATA) public editBook: any,
     private dialogref: MatDialogRef<AddbookComponent>,
-    ) { }
+  ) { }
 
-    bookForm !: FormGroup;
-    actionBtn: string = "save";
-    editData:any;
+  bookForm !: FormGroup;
+  actionBtn: string = "save";
+  editData: any;
   ngOnInit(): void {
 
     this.bookForm = this.formbuilder.group({
 
       BookName: ['', Validators.required],
-      Author:   ['', Validators.required],
+      Author: ['', Validators.required],
       Quantity: ['', Validators.required],
       Category: ['', Validators.required]
 
@@ -41,26 +41,28 @@ export class AddbookComponent implements OnInit {
     }
 
   }
+  addBook() {
 
-  addBook() { 
-    // console.log(this.bookForm.value)
     if (!this.editBook) {
       if (this.bookForm.valid) {
 
         this.api.addBook(this.bookForm.value).subscribe({
-            next: (Response) => {
-              // alert("Book Added Successfully !!")
-              this.toastr.success('', 'Book Added Successfully',{
-                positionClass:'toast-top-center'
-              });
-              this.bookForm.reset();
-              this.dialogref.close('save');
-              this.getAllbooks();
-            },
-            error: () => {
-              alert("Error While Adding ");
-            }
-          })
+          next: (Response) => {
+
+            this.toastr.success('', 'Book Added Successfully', {
+              positionClass: 'toast-top-center'
+            });
+            this.bookForm.reset();
+            this.dialogref.close('save');
+            this.getAllbooks();
+          },
+          error: () => {
+
+            this.toastr.warning('', 'Error While Adding ', {
+              positionClass: 'toast-top-center'
+            });
+          }
+        })
       }
     } else {
       this.updateBook()
@@ -70,8 +72,8 @@ export class AddbookComponent implements OnInit {
     this.api.updateBook(this.bookForm.value, this.editBook.id)
       .subscribe({
         next: (res) => {
-           this.toastr.success('', 'Book Updated Successfully',{
-            positionClass:'toast-top-center'
+          this.toastr.success('', 'Book Updated Successfully', {
+            positionClass: 'toast-top-center'
           });
           this.bookForm.reset();
           this.dialogref.close('update');
